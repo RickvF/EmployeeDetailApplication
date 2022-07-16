@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EmployeeDetailApplication.Models;
+using EmployeeDetailApplication.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EmployeeDetailApplication.Views
+namespace EmployeeDetailApplication.Controls
 {
     /// <summary>
-    /// Interaction logic for DeleteView.xaml
+    /// Interaction logic for EmployeeOverview.xaml
     /// </summary>
-    public partial class DeleteView : UserControl
+    public partial class EmployeeOverview : UserControl
     {
-        public DeleteView()
+        public EmployeeOverview()
         {
-            InitializeComponent();
-        }
+            InitializeComponent();            
+        }        
     }
 }

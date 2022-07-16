@@ -6,13 +6,14 @@ namespace EmployeeDetailApplication.ViewModels.Factories
 {
     public class HomeViewModelFactory : IViewModelFactory<HomeViewModel>
     {
-        public HomeViewModelFactory()
+        private IViewModelFactory<EmployeeOverViewViewModel> _employeOverViewViewModelFactory;
+        public HomeViewModelFactory(IViewModelFactory<EmployeeOverViewViewModel> employeOverViewViewModelFactory)
         {
-
+            _employeOverViewViewModelFactory = employeOverViewViewModelFactory;
         }
         public HomeViewModel CreateViewModel()
         {
-            return new HomeViewModel();
+            return new HomeViewModel(_employeOverViewViewModelFactory.CreateViewModel());
         }
     }
 }

@@ -11,16 +11,8 @@
                 <views:HomeView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewmodels:SearchEViewModel}">
-                <views:SearchView/>
-            </DataTemplate>
-
             <DataTemplate DataType="{x:Type viewmodels:CreateEViewModel}">
                 <views:CreateView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type viewmodels:DeleteEViewModel}">
-                <views:DeleteView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewmodels:EditEViewModel}">

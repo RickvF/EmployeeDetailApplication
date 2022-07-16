@@ -9,9 +9,7 @@ namespace EmployeeDetailApplication.Models.Navigators
     public enum ViewType
     {
         Home,
-        Search,
         Create,
-        Delete,
         Edit
     }
 

@@ -4,6 +4,7 @@ using EmployeeDetailApplication.ViewModels.Factories;
 using System;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
+using EmployeeDetailApplication.Services;
 
 namespace EmployeeDetailApplication
 {
@@ -26,12 +27,13 @@ namespace EmployeeDetailApplication
         {
             IServiceCollection services = new ServiceCollection();
 
+            services.AddSingleton<IEmployeeDataService, EmployeeDataService>();
+
             services.AddSingleton<IRootViewModelFactory, RootViewModelFactory>();
             services.AddSingleton<IViewModelFactory<HomeViewModel>, HomeViewModelFactory>();
-            services.AddSingleton<IViewModelFactory<SearchEViewModel>, SearchEViewModelFactory>();
             services.AddSingleton<IViewModelFactory<CreateEViewModel>, CreateEViewModelFactory>();
-            services.AddSingleton<IViewModelFactory<DeleteEViewModel>, DeleteEViewModelFactory>();
             services.AddSingleton<IViewModelFactory<EditEViewModel>, EditEViewModelFactory>();
+            services.AddSingleton<IViewModelFactory<EmployeeOverViewViewModel>, EmployeeOverviewViewModelFactory>();
 
             services.AddScoped<INavigator, Navigator>();
             services.AddScoped<MainViewModel>();

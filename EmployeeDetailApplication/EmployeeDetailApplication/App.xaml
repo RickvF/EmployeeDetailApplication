@@ -1,0 +1,32 @@
+﻿<Application x:Class="EmployeeDetailApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EmployeeDetailApplication"
+             xmlns:viewmodels="clr-namespace:EmployeeDetailApplication.ViewModels"
+             xmlns:views="clr-namespace:EmployeeDetailApplication.Views">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:SearchEViewModel}">
+                <views:SearchView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:CreateEViewModel}">
+                <views:CreateView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:DeleteEViewModel}">
+                <views:DeleteView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:EditEViewModel}">
+                <views:EditView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

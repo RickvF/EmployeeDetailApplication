@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeDetailApplication.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,17 +12,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EmployeeDetailApplication.Views
+namespace EmployeeDetailApplication.Controls
 {
     /// <summary>
-    /// Interaction logic for EditView.xaml
+    /// Interaction logic for EmployeeData.xaml
     /// </summary>
-    public partial class EditView : UserControl
+    public partial class EmployeeData : UserControl
     {
-        
-        public EditView()
+        public EmployeeData()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
     }
 }

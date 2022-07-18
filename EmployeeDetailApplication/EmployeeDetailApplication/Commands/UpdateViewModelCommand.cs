@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace EmployeeDetailApplication.Commands
 {
+    //Command to update the ViewModel, update the active View. Used in the Navbar for navigation
     public class UpdateViewModelCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;

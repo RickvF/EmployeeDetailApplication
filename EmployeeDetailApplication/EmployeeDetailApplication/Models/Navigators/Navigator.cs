@@ -23,12 +23,5 @@ namespace EmployeeDetailApplication.Models.Navigators
                 OnPropertyChanged(nameof(CurrentViewModel));
             }
         }
-
-        public ICommand UpdateViewModelCommand { get; set; }
-
-        public Navigator(IRootViewModelFactory viewModelFactory)
-        {
-            UpdateViewModelCommand = new UpdateViewModelCommand(this, viewModelFactory);
-        }
     }
 }

@@ -13,8 +13,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <controls:SearchBar Grid.Row="0" DataContext="{Binding EmployeeOverViewViewModel}"/>
-        <controls:EmployeeOverview Grid.Row="1" DataContext="{Binding EmployeeOverViewViewModel}"/>
+        <TextBlock Grid.Row="0" FontSize="18" HorizontalAlignment="Center" Text="Home" />
+        <controls:SearchBar Grid.Row="1" DataContext="{Binding EmployeeOverViewViewModel}"/>
+        <controls:EmployeeOverview Grid.Row="2" DataContext="{Binding EmployeeOverViewViewModel}"/>
     </Grid>
 </UserControl>

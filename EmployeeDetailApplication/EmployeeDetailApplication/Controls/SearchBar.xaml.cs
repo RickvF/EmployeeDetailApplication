@@ -26,6 +26,9 @@ namespace EmployeeDetailApplication.Controls
             searchTextBoxText.Text = placeholderText;
         }
 
+        //Preform search for Employees based on name. 
+        //When text is empty get all Employees to show in overview
+        //Search by name and get all employees can be accessed by passthrought datacontext from ViewModel
         private void textChangedEventHandler(object sender, TextChangedEventArgs args)
         {
             TextBox tb = (TextBox)sender;

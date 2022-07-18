@@ -12,23 +12,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <RadioButton Grid.Column="0" Content="Home" 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Padding="5" Content="Home" Background="{StaticResource BrushPrimary}"
                          Command="{Binding UpdateViewModelCommand}" 
                          CommandParameter="{x:Static nav:ViewType.Home}"/>
-            <RadioButton Grid.Column="2" Content="Create" 
+        <Button Grid.Column="1" Padding="5" Content="Create" Background="{StaticResource BrushPrimary}"
                          Command="{Binding UpdateViewModelCommand}" 
                          CommandParameter="{x:Static nav:ViewType.Create}"/>
-            <RadioButton Grid.Column="4" Content="Edit" 
-                         Command="{Binding UpdateViewModelCommand}" 
-                         CommandParameter="{x:Static nav:ViewType.Edit}"/>
-        </Grid>
     </Grid>
 </UserControl>

@@ -23,6 +23,15 @@ namespace EmployeeDetailApplication.Controls
         public EmployeeOverview()
         {
             InitializeComponent();            
-        }        
+        }
+
+        //Remove the selected employee. IEmployeeDataService (to preform deletion) can be accessed via the passthrought datacontext from ViewModel
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            Employee selectedEmployee = (Employee)btn.DataContext;
+            var datac = (EmployeeOverViewViewModel)this.DataContext;
+            datac.DeleteEmployee(selectedEmployee.id);
+        }
     }
 }

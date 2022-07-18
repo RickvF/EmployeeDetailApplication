@@ -7,28 +7,30 @@ namespace EmployeeDetailApplication.ViewModels.Factories
 {
     public class RootViewModelFactory : IRootViewModelFactory
     {
-        private readonly IViewModelFactory<HomeViewModel> _homeViewModelFactory;
-        private readonly IViewModelFactory<CreateEViewModel> _createViewModelFactory;
-        private readonly IViewModelFactory<EditEViewModel> _editViewModelFactory;
+        //Creation of delegates functions to create ViewModels using Dependancy Injection
+        private readonly CreateViewModel<HomeViewModel> _createHomeViewModel;
+        private readonly CreateViewModel<CreateEViewModel> _createCreateViewModel;
+        private readonly CreateViewModel<EditEViewModel> _createEditViewModel;
 
-        public RootViewModelFactory(IViewModelFactory<HomeViewModel> homeViewModelFactory,
-            IViewModelFactory<CreateEViewModel> createViewModelFactory,
-            IViewModelFactory<EditEViewModel> editViewModelFactory)
+        public RootViewModelFactory(CreateViewModel<HomeViewModel> createHomeViewModel, 
+            CreateViewModel<CreateEViewModel> createCreateViewModel, 
+            CreateViewModel<EditEViewModel> createEditViewModel)
         {
-            _homeViewModelFactory = homeViewModelFactory;
-            _createViewModelFactory = createViewModelFactory;
-            _editViewModelFactory = editViewModelFactory;
+            _createHomeViewModel = createHomeViewModel;
+            _createCreateViewModel = createCreateViewModel;
+            _createEditViewModel = createEditViewModel;
         }
+
         public BaseViewModel CreateViewModel(ViewType viewType)
         {
             switch (viewType)
             {
                 case ViewType.Home:
-                    return _homeViewModelFactory.CreateViewModel();
+                    return _createHomeViewModel();
                 case ViewType.Create:
-                    return _createViewModelFactory.CreateViewModel();
+                    return _createCreateViewModel();
                 case ViewType.Edit:
-                    return _editViewModelFactory.CreateViewModel();
+                    return _createEditViewModel();
                 default:
                     throw new ArgumentException("The ViewType does not have a ViewModel.", "viewType");
             }

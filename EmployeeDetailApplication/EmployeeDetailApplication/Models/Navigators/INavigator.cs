@@ -16,6 +16,5 @@ namespace EmployeeDetailApplication.Models.Navigators
     public interface INavigator
     {
         BaseViewModel CurrentViewModel { get; set; }
-        ICommand UpdateViewModelCommand { get; }
     }
 }

@@ -24,12 +24,9 @@ namespace EmployeeDetailApplication.Services
         }
         public async Task<EmployeeDto> Create(EmployeeDto entity)
         {
-            string jsonEntity = JsonConvert.SerializeObject(entity);
-            StringContent stringContent = new StringContent(jsonEntity, Encoding.UTF8, "application/json");
-
             var request = new HttpRequestMessage(HttpMethod.Post, this.baseUrl)
             {
-                Content = stringContent
+                Content = stringifyObject(entity)
             };
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", this.bearerToken);
             HttpResponseMessage response = await _client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
@@ -114,12 +111,9 @@ namespace EmployeeDetailApplication.Services
 
         public async Task<EmployeeDto> Update(int id, EmployeeDto entity)
         {
-            string jsonEntity = JsonConvert.SerializeObject(entity);
-            StringContent stringContent = new StringContent(jsonEntity, Encoding.UTF8, "application/json");
-
             var request = new HttpRequestMessage(HttpMethod.Patch, $"{this.baseUrl}/{id}")
             {
-                Content = stringContent
+                Content = stringifyObject(entity)
             };
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", this.bearerToken);
             HttpResponseMessage response = await _client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
@@ -133,6 +127,12 @@ namespace EmployeeDetailApplication.Services
             {
                 return null;
             }
+        }
+
+        private StringContent stringifyObject(EmployeeDto entity)
+        {
+            string jsonEntity = JsonConvert.SerializeObject(entity);
+            return new StringContent(jsonEntity, Encoding.UTF8, "application/json");
         }
     }
 }

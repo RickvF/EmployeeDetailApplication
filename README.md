@@ -8,6 +8,7 @@ Follow chapters describe packages needed to compile the solution. Thought proces
 - Microsoft.Extensions.DependencyInjection --> For Dependency Injection
 - Newtonsoft.Json --> For Json Serialization and Deserialization of data for the REST API
 - Microsoft.Extensions.Http --> To use Dependeny Injection for the HTTP Client to create only one instance and reuse that same instance
+- Moq --> For unit testing
 
 ## Notes before starting implementation
 ![Notes](notes.jpg)
@@ -24,3 +25,4 @@ List of implemented functions:
 - Delete Employees (Home page)
 - Edit Employees (Home page - redirect)
 - Create Employees (Create page)
+- Two unit tests for get employee by name match and no match

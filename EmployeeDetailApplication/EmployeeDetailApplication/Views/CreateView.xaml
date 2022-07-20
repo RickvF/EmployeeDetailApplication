@@ -12,7 +12,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" FontSize="18" HorizontalAlignment="Center" Text="Create" />
+        <TextBlock Style="{StaticResource DarkThemeTextBlock}" Grid.Row="0" FontSize="18" HorizontalAlignment="Center" Text="Create" />
         <controls:EmployeeData Grid.Row="1" Margin="15"/>
     </Grid>
 </UserControl>
